@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { BookOpen, CircleUserRound, Download, Map, Users, Settings2 } from 'lucide-react'
+import { BookOpen, CircleUserRound, Download, Map, Users } from 'lucide-react'
 
 function SectionIcon({ name }) {
   const props = { size: 16, strokeWidth: 1.8, 'aria-hidden': true }
@@ -113,19 +113,6 @@ export default function BottomBar({ onSelectItem, activeSelection, theme = 'ligh
           </button>
 
           <div className={`bb-profile-pop ${profileOpen ? 'open' : ''}`}>
-            {showColumnsSettings && (
-              <button
-                className="bb-pop-btn"
-                onClick={() => {
-                  onOpenSettings?.()
-                  setProfileOpen(false)
-                }}
-              >
-                <Settings2 size={14} style={{ marginRight: '6px' }} />
-                Настройки столбцов
-              </button>
-            )}
-
             <button
               className="bb-pop-btn"
               onClick={() => onThemeChange?.(theme === 'dark' ? 'light' : 'dark')}
